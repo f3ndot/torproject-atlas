@@ -63,8 +63,10 @@
 
     <dt><span class="tip" data-content="Flags that the directory authorities assigned to this relay." data-original-title="Relay flags">Flags</span></dt>
     <dd><% _.each(relay.get('flags'), function(flag) { %>
-        <img class="inline" src="img/flags/<%= flag[1] %>.png">
-        <span class="inline"><%= flag[0] %></span>
+        <span class="flags" title="<%= flag[2] %>">
+          <img class="inline" src="img/flags/<%= flag[1] %>.png">
+          <span class="inline"><%= flag[0] %></span>
+        </span>
     <% }); %>
     </dd>
 
