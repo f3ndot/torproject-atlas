@@ -131,7 +131,8 @@ define([
             var error = options.error;
             var model = this;
             console.log("doing query..");
-            $.getJSON(this.baseurl+'/details?lookup='+this.fingerprint, function(data) {
+            // To prevent fingerprint disclosure when querying Onionoo, the fingerprint or hashed fingerprint is hashed
+            $.getJSON(this.baseurl+'/details?lookup='+getFingerprintHash(this.fingerprint), function(data) {
                 if (data.relays.length >= 1) {
                     var relay = data.relays[0];
                     //console.log(data);

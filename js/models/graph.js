@@ -90,7 +90,7 @@ define([
                 bw_years: {write: [], read: []}
             });
 
-            $.getJSON(this.baseurl+'/bandwidth?lookup='+fingerprint, function(data) {
+            $.getJSON(this.baseurl+'/bandwidth?lookup='+getFingerprintHash(fingerprint), function(data) {
                 model.data = data;
                 success(model, data);
             });
@@ -117,7 +117,7 @@ define([
                 weights_years: {advbw: [], cw: [], guard: [], exit: []}
             });
 
-            $.getJSON(this.baseurl+'/weights?lookup='+fingerprint, function(data) {
+            $.getJSON(this.baseurl+'/weights?lookup='+getFingerprintHash(fingerprint), function(data) {
                 model.data = data;
                 success(model, data);
             });
