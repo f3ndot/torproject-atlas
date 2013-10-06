@@ -18,37 +18,37 @@ define([
                 }
                 if (flag == "BadExit") {
                     model.set({badexit: true});
-                    output.push([flag, "denied_"+size[0]]);
+                    output.push([flag, "denied_"+size[0], "This relay breaks stuff, either maliciously or through misconfiguration."]);
                 }
                 if (flag == "Fast") {
-                    output.push([flag,"bolt_"+size[0]]);
+                    output.push([flag,"bolt_"+size[0], "This relay has lots of bandwidth available."]);
                 }
                 if (flag == "Guard") {
-                    output.push([flag,"share_"+size[0]]);
+                    output.push([flag,"share_"+size[0], "This relay is suitable to be the first hop (entry relay) in a Tor circuit."]);
                 }
                 if (flag == "HSir") {
-                    output.push([flag,"book_alt_"+size[0]]);
+                    output.push([flag,"book_alt_"+size[0], "This relay is a v2 hidden service directory."]);
                 }
                 if (flag == "Named") {
-                    output.push([flag,"info_"+size[2]]);
+                    output.push([flag,"info_"+size[2], "This relay has a nickname."]);
                 }
                 if (flag == "Running") {
-                    output.push([flag,"fork_"+size[1]]);
+                    output.push([flag,"fork_"+size[1], "This relay has been online within the past 45 minutes."]);
                 }
                 if (flag == "Stable") {
-                    output.push([flag,"cd_"+size[0]]);
+                    output.push([flag,"cd_"+size[0], "This relay is considered stable."]);
                 }
                 if (flag == "V2Dir") {
-                    output.push([flag,"book_"+size[1]]);
+                    output.push([flag,"book_"+size[1], "This relay supports the v2 directory protocol."]);
                 }
                 if (flag == "Valid") {
-                    output.push([flag,"check_alt_"+size[0]]);
+                    output.push([flag,"check_alt_"+size[0], "This relay is running a version of Tor not known to be broken, and the directory authority has not blacklisted it as suspicious."]);
                 }
                 if (flag == "Unnamed") {
-                    output.push([flag,"question_mark_"+size[2]]);
+                    output.push([flag,"question_mark_"+size[2], "This relay's configured nickname is used by another relay."]);
                 }
                 if (flag == "Exit") {
-                    output.push([flag,"cloud_download_"+size[0]]);
+                    output.push([flag,"cloud_download_"+size[0], "This relay is configured to be the last hop (exit relay) in a Tor circuit."]);
                 }
             });
             return output;
