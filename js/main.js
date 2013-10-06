@@ -15,6 +15,8 @@ require.config({
     popover: 'libs/bootstrap/bootstrap-popover',
     collapse: 'libs/bootstrap/bootstrap-collapse',
     d3js: 'libs/d3js/d3.v3.min',
+    sha1: 'libs/cryptojs/rollups/sha1',
+    typedarrays: 'libs/cryptojs/components/lib-typedarrays',
     templates: '../templates'
   }
 
@@ -23,7 +25,9 @@ require.config({
 require([
 
   // Load our app module and pass it to our definition function
-  'app'
+  'app',
+  'sha1',
+  'typedarrays'
 
   // Some plugins have to be loaded in order due to their non AMD compliance
   // Because these scripts are not "modules" they do not pass any values to the definition function below

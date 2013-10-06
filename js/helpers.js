@@ -262,3 +262,20 @@ function hrBandwidth(bw) {
     }
     return bw;
 }
+
+function getFingerprintHash(fingerprint) {
+  if (fingerprint.match(/^[a-f0-9]{40}$/i) === null) return false;
+
+  // Convert hex strings into arrays of unsigned 32-bit integers
+  var parseHexString = function(str) {
+    var result = [];
+    while (str.length >= 8) {
+      result.push(parseInt(str.substring(0, 8), 16));
+      str = str.substring(8, str.length);
+    }
+    return result;
+  }
+
+  var wa = CryptoJS.lib.WordArray.create(parseHexString(fingerprint));
+  return CryptoJS.SHA1(wa).toString(CryptoJS.enc.Hex);
+}
