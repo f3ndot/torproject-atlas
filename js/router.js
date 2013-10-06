@@ -54,7 +54,15 @@ define([
         if (query == "") {
             doSearchView.error(0);
         } else {
-            doSearchView.collection.url = doSearchView.collection.baseurl + query;
+            // if the query matches the characteristics of a hash or fingerprint
+            // (40 hex chars) hash it to prevent fingerprint disclosure.
+            var remoteQuery = query;
+            if (getFingerprintHash(query) !== false) {
+                console.log('Hashing fingerprint before sending to Onionoo');
+                remoteQuery = getFingerprintHash(query);
+            }
+
+            doSearchView.collection.url = doSearchView.collection.baseurl + remoteQuery;
             doSearchView.collection.lookup({
                 success: function(relays){
                     $("#content").show();
