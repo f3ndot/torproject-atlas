@@ -7,9 +7,9 @@ define([
   'text!templates/search/do.html',
   'datatables',
   'tooltip',
-  'helpers',
   'sha1',
   'typedarrays',
+  'helpers',
   'collapse',
   'typeahead'
 ], function($, _, Backbone, resultsCollection, doSearchTemplate){
