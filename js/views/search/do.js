@@ -8,6 +8,8 @@ define([
   'datatables',
   'tooltip',
   'helpers',
+  'sha1',
+  'typedarrays',
   'collapse',
   'typeahead'
 ], function($, _, Backbone, resultsCollection, doSearchTemplate){

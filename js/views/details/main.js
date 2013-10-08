@@ -11,6 +11,8 @@ define([
   'popover',
   'd3js',
   'collapse',
+  'sha1',
+  'typedarrays',
   'helpers'
 ], function($, _, Backbone, relayModel, graphModel, mainDetailsTemplate){
     var mainDetailsView = Backbone.View.extend({

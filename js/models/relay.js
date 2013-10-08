@@ -3,6 +3,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'sha1',
+  'typedarrays',
   'helpers'
 ], function($, _, Backbone){
 
