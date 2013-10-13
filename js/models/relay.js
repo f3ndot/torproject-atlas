@@ -26,7 +26,7 @@ define([
                 if (flag == "Guard") {
                     output.push([flag,"share_"+size[0]]);
                 }
-                if (flag == "HSir") {
+                if (flag == "HSDir") {
                     output.push([flag,"book_alt_"+size[0]]);
                 }
                 if (flag == "Named") {
@@ -155,6 +155,8 @@ define([
                     //console.log(relay.uptime.hrfull);
                     relay.uptime = relay.last_restarted ? relay.uptime.millisecs : null;
                     relay.last_restarted = relay.last_restarted ? relay.last_restarted : null;
+                    relay.last_seen = relay.last_seen ? relay.last_seen : null;
+                    relay.downtime = relay.last_seen ? model.parsedate(relay.last_seen).hrfull : null;
                     relay.as_no = relay.as_number ? relay.as_number : null;
                     relay.as_name = relay.as_name ? relay.as_name : null;
                     model.set({badexit: false});
